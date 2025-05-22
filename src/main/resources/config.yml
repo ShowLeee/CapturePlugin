@@ -1,0 +1,55 @@
+
+points:
+  plaza:
+    name: "Центральная площадь"
+    world: world
+    x: 100.5
+    y: 64.0
+    z: 200.5
+    type: ALPHA_TEAM
+    team: Alpha
+  bridge:
+    name: "Северный мост"
+    world: world
+    x: 150.5
+    y: 64.0
+    z: 200.5
+    type: NEUTRAL
+    team: Neutral
+  fortress:
+    name: "Южная крепость"
+    world: world
+    x: 200.5
+    y: 64.0
+    z: 200.5
+    type: BETA_TEAM
+    team: Beta
+
+    spawns:
+      alpha: "world,135.5,64,180.5,0,0"
+      beta: "world,-50.5,64,200.5,180,0"
+      lobby: "world,135.5,64,220.5,180,0"
+
+    messages:
+      alpha: "§9Вы в команде Альфа! Захватывайте точки!"
+      beta: "§cВы в команде Бета! Захватывайте точки!"
+      waiting: "§6Ожидание игроков: §e{current}/{max}"
+      winner_announcement: "§6Победила команда {team}! Лучший игрок: §e{top_killer}§6 (убийств: §e{top_kills}§6)"
+
+    game:
+      min_players: 2
+      max_players: 10
+      game_duration: 1800 # 30 минут в секундах
+
+    capture:
+      speed: 1 # Скорость захвата (прогресс за тик)
+      cooldown: 30 # Задержка после захвата (сек)
+      reset_on_leave: true # Сбрасывать прогресс при выходе всех игроков
+
+    scoreboard:
+      title: "§6§lТочки Захвата"
+      lines:
+        - "§fВремя: §e{time}"
+        - "§fТочки: §a{alpha_points} §f| §c{beta_points}"
+        - "§fУбийств: §e{kills}"
+        - "§fЛучший: §b{top_killer}"
